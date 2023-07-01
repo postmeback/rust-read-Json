@@ -15,7 +15,7 @@ struct Article {
 }
 
 fn main() {
-    let json = r#"
+    let raw_json: &str = r#"
 {
   "article": "how to work with json in Rust",
   "author": "akhil",
@@ -32,7 +32,7 @@ fn main() {
   ]
 }
 "#;
-    let parsed: Article = read_json_typed(json);
+    let parsed: Article = read_json_typed(raw_json);
 
     println!("\n\n The name of the first paragraph is: {}", parsed.paragraph[0].name);
 }
